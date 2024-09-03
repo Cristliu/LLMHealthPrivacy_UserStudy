@@ -1,0 +1,8 @@
+matplotlib
+pymysql
+pandas==0.25.1
+Django==4.2
+IPy==1.00
+numpy==1.19.2
+scikit_learn==0.23.2
+openai==0.28

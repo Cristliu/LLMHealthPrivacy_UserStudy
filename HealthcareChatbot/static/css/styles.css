@@ -1,0 +1,491 @@
+/* 在 static/css/styles.css 文件中添加 */
+body {
+    background-image: url('/static/img/BG1.png'); /* 统一背景图片 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 18px; /* 或更大，根据需要调整 */
+    /* position: fixed; 防止移动 */ /*把这个去掉之后，dialogue页面就可以上下滑动了！！！！！个别设备的背景也可以全覆盖了！！！！！*/
+}
+
+html, body {
+    width: 100%;
+    /* height: 100%; */
+    justify-content: space-between;
+}
+
+
+.container {
+    display: flex;
+    /* display: -webkit-flex; Safari */
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    /* justify-content: space-between; 在主轴方向上分布空间 */
+    /* min-height: calc(100vh - 0.1vh); 视口高度减去上下外边距 */
+    /* max-height: 100vh; */
+    height: 100vh;
+    /* box-sizing: border-box; 包括padding在内的宽度计算 */
+    background: rgb(255, 255, 255,0); /* 不透明背景 */
+    border-radius: 10px; /* 圆角边框 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* 阴影效果 */
+    padding: 20px;
+    max-width: 800px; /* 最大宽度 */
+    margin: 0px auto 0px; 
+    justify-content: flex-start; /*内容分布方式*/
+    /* box-sizing: border-box; 边框和内边距包含在宽度内 */
+    overflow: auto; /* 如果需要内部滚动 */
+
+}
+
+
+h1, h2, h3, h4, h5, h6{
+    word-wrap: break-word; /* 允许单词内换行 */
+    overflow-wrap: break-word; /* 允许在长单词或URL地址内部进行换行 */
+    text-align: center;
+    font-weight: normal; /* 调整标题字体为正常粗细 */
+    margin-bottom: 10px;
+    color: #333;
+}
+
+h2 {
+    white-space: nowrap;
+    color: #333;
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; 在极端情况下显示省略号 */
+}
+
+
+.content {
+    margin-top: 5px; /* 与标题的间距 */
+    padding: 10px 0px; /* 增加左右的内边距以留出更多空间，同时保留上下的内边距 */
+    text-align: justify; /* 使文本两端对齐 */  
+    max-width: 100%;
+    box-sizing: border-box; /* 确保padding和border包含在宽度内 */  
+}
+
+/* padding: 15px 30px; */
+
+.content-line {
+    border: 1px solid #cccccc; /* 浅色边框 */
+    border-radius: 10px;
+    margin-top: 5px; /* 与标题的间距 */
+    padding: 15px 30px; /* 增加左右的内边距以留出更多空间，同时保留上下的内边距 */
+    text-align: justify; /* 使文本两端对齐 */
+    margin-bottom: 20px;
+    line-height: 1.6; /* 增加行间距 */
+    /* max-height: 800px; 设置最大高度 */
+    overflow: auto; /* 超出最大高度时，内容可滚动 */
+}
+
+.prenote {
+    margin: 15px 20px; /* 上下不变，左右自动，实现居中 */
+    text-align: justify;
+}
+
+
+strong, .highlight {
+    color: rgb(195, 155, 98);
+}
+
+.button-container {
+    text-align: center;
+}
+
+button {
+    background-color: rgb(195, 155, 98);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    /* text-transform: uppercase; */
+    cursor: pointer;
+    display: inline-block;
+    max-width: 400px; /* 限制最大宽度 */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: 10 auto; /* 上下不变，左右自动，实现居中 */
+    /* width: 100%; 宽度适应内容 */
+    /* margin: 0 auto; 上下不变，左右自动，实现居中 */
+    border-radius: 10px;
+}
+
+
+button:hover {
+    background-color: darkgoldenrod;
+}
+
+button, input, textarea {
+    font-size: 18px; /* 或更大，根据需要调整 */
+}
+
+::placeholder {
+    font-size: 16px; /* 增加 placeholder 的字体大小 */
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: justify;
+    color: #333;
+}
+
+.footnote {
+    margin-top: 5px;
+    font-size: 15px; /* 减小字体大小 */
+}
+
+.footnote p {
+    font-size: 15px;
+    /* font-style: italic; */
+    margin: 0; /* 减少段落之间的外边距 */
+    line-height: 1.6; /* 减小行距 */
+}
+
+.indent-4 {
+    text-indent: 1em; /* 或使用 ::before 伪元素 */
+}
+
+.index_p_margin {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+
+
+
+.chat-container {
+    /* flex: 1; 占用所有可用空间 */
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between; /*调整内容分布方式*/
+    /* max-width: 800px; */
+    /* margin: 0 auto 0; 上下自动，居中对齐 */
+    /* height: 95vh; 假定你的 <main class="container"> 高度几乎等于视口高度 */
+    /* box-sizing: border-box; */
+    overflow-y: auto;
+    /* padding: 0px; */
+    /* min-height: calc(100vh - 5px);  不要定义这个最小的高度就不会超出上一层的高度了*/
+
+}
+
+
+
+.messages {
+    overflow-y: auto; /* 当内容超出时可滚动 */
+    /* flex-grow:1;  */
+    /* height:100%; */
+    /* padding: 10px; 或根据需要调整 */
+    /* margin-top: -40px; 保持一定距离在消息区域和输入区域之间 */
+    /* box-sizing: border-box; */
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;  /* 使头像呈圆形 */
+    /* margin-right: 5px;  在头像和文本之间添加一些空间 */
+    align-self: flex-start; /* 靠顶对齐 */
+}
+
+.message {
+    display: flex; /* 添加这个属性使得头像和文本水平排列 */
+    /* align-items: center;  垂直居中对齐头像和文本 */
+    align-items: flex-start; /* 顶部对齐头像和文本 */
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    /* word-wrap: break-word; 如果有很长的单词或URL，允许它们断行 */
+    width: fit-content; /* 宽度由内容决定但不超过父容器 */
+    /* width: auto; */
+    /* max-width:90%; */
+    margin-left: auto; /*对于左侧对齐的消息，将左边距设置为auto */
+    margin-right: auto; /*对于右侧对齐的消息，将右边距设置为auto */
+}
+
+.text-content {
+    /* max-width: 80%; 根据实际需要调整 */
+    word-wrap: break-word;
+    font-size: 18px;
+}
+
+
+.user-message {
+    align-self: flex-end;
+    background-color: hsl(0, 53%, 97%);
+    justify-content: flex-end;
+    /* margin-left: auto; 推动消息到右边 */
+    margin-right: 0; /* 右边距设置为0 */
+    margin-left: unset; /* 对于靠右的消息，取消左边距 */
+    padding-left: 30px;
+
+    }
+    
+.gpt-message {
+    align-self: flex-start;
+    background-color: #dbf4ff;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: unset; /* 对于靠左的消息，取消右边距 */
+    /* margin-right: auto; */
+    padding-right: 30px;
+}
+
+.message, .gpt-message {
+    box-sizing: border-box;
+    flex-shrink: 1;
+}
+
+.gpt-message .avatar {
+    margin-right: 10px; /* 头像与文本间距 */
+    flex-shrink: 1;
+}
+
+
+/* 用户头像样式调整 */
+.user-message .avatar {
+    margin-left: 10px; /*用户头像在文本右侧，因此设置左外边距*/
+    order: 2; /* 在flex布局中，用户头像排在文本之后 */
+}
+
+/* 用户文本内容样式调整 */
+.user-message .text-content {
+    order: 1; /* 在flex布局中，文本内容排在头像之前 */
+    text-align: left; /* 文本靠左显示 */
+}
+
+
+.suggestions,
+.input-container {
+    flex: 3; /* 两者共占据30%的空间 */
+    display: flex;
+}
+
+.suggestions {
+    flex:1; /* 推动建议区域到底部 */
+    display: flex;
+    justify-content: center;
+    height: auto;
+    max-width: 100%;
+    /* padding: 10px; */
+    /* position: fixed; 固定在底部 */
+    /* margin-bottom: 0; */
+    /* margin-left: -20px; */
+    /* bottom: 230px; */
+    background-color: rgba(255, 255, 255, 0);
+    gap: 10px;
+}
+
+.suggestion-btn {
+    /* margin: 0 0px; */
+    flex:none;
+    padding: 10px 10px;
+    row-gap: 20px;
+    justify-content: center;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+    cursor: pointer;
+    font-size: 13px;
+    text-align: left;
+    border:#333;
+    width: auto;
+    max-width: 32%;
+    height: auto;
+}
+
+.suggestion-btn:hover {
+background-color: rgba(224, 223, 223, 0.3);
+}
+
+
+.suggestion-btn-new {
+    /* margin: 0 0px; */
+    flex:none;
+    padding: 10px 10px;
+    row-gap: 20px;
+    justify-content: center;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+    cursor: pointer;
+    font-size: 13px;
+    text-align: left;
+    border:#333;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.suggestion-btn-new:hover {
+background-color: rgba(224, 223, 223, 0.3);
+}
+
+.input-container {
+    flex:2; /* 推动输入区域到底部 */
+    text-align: center;
+    display: flex;
+    flex-direction: row; /* 使得元素垂直排列 */
+    justify-content: center; /* 居中对齐内部元素 */
+    align-items: center; /* 居中对齐子元素 */
+    flex-wrap: wrap; /* 允许内容换行 */
+    /* position: fixed; 固定在底部 */
+    /* gap: 20px; 设置按钮之间的间隙 */
+    /* margin-left: -20px; 与消息区域保持间距 */
+    /* margin-bottom: 0px; 与消息区域保持间距 */
+    /* bottom: 0; 定位到底部 */
+    /* height: 20vh;  */
+    /* max-width: 900px; */
+    /* width: 100%; 占满全宽 */
+    background: rgba(255, 255, 255, 0.5); /* 可选：添加半透明背景以增强可读性 */
+    border-radius: 10px; /* 圆角边框 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /*阴影效果*/
+    /* padding: 10px; */
+    /* box-sizing: border-box; */
+}
+
+
+
+
+.input-container textarea {
+    width: 100%; /* 宽度调整为100% */
+    max-width: 900px; /* 最大宽度，保持与容器一致 */
+    margin: 5px; /*水平居中*/
+    padding: 10px; /* 增加内边距 */
+    box-sizing: border-box; /* 边框和内边距的宽度包含在width内 */
+    resize: vertical; /* 允许用户垂直调整大小 */
+    height: 70%; /* 初始高度 */
+}
+
+
+.messages {
+    flex:6.5;
+    display: flex;
+}
+
+.button-row {
+    display: flex; /* 使用flex布局使按钮并排 */
+    /* flex-direction: column; 设置元素竖直排列 */
+    justify-content: center; /* 水平居中对齐 */
+    gap: 70px; /* 设置按钮之间的间隙 */
+}
+
+.input-container .styled-button {
+    background-color: rgb(195, 155, 98);
+    color: white;
+    border: none;
+    /* padding: 10px 20px; */
+    /* text-transform: uppercase; */
+    cursor: pointer;
+    max-width: 300px; /* 最大宽度 */
+    height: 20%;
+    font-size: 18px;
+    border-radius: 10px;
+    /* 就是这里的原因导致的底下超出了一块 */
+    margin-bottom: 5px;
+
+    /* margin: 10px auto; 删除此行，因为我们已在.button-row中设置布局 */
+}
+
+.input-container .end-styled-button {
+    background-color: rgb(85, 128, 171);
+    color: white;
+    border: none;
+    /* padding: 10px 20px; */
+    /* text-transform: uppercase; */
+    cursor: pointer;
+    max-width: 300px; /* 最大宽度 */
+    height: 20%;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+
+
+}
+
+
+
+.input-container .styled-button:hover {
+    background-color: darkgoldenrod;
+}
+
+.input-container .end-styled-button:hover {
+    background-color: rgb(52, 95, 137);
+}
+
+
+/* dialogue.css */
+#infoForm {
+    display: flex;
+    flex-direction: column;
+    /* margin: 20px; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    box-sizing: border-box; /* 确保padding和border包含在宽度内 */
+}
+
+#infoForm label {
+    margin: 10px 0;
+}
+
+#additionalInfo {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    box-sizing: border-box; /* 确保padding和border包含在宽度内 */
+}
+
+#additionalInfo > div {
+    display: flex;
+    /* align-items: center; */
+    align-items: flex-start; /* 或尝试其他对齐方式如flex-end */
+    margin-bottom: 5px; /* 根据需要调整间距 */
+}
+
+#additionalInfo label {
+    /* label不需要填满额外空间 */
+    flex-shrink: 0;
+    margin-right: 20px; /* label和select/input之间的间距 */
+    font-size: 18px;
+    line-height: 1.5; /* 示例值，根据需要调整 */
+}
+
+#additionalInfo select, 
+#additionalInfo input[type="text"] {
+    flex-grow: 1; /* 让select或input填满剩余空间 */
+    height: 30px; /* 根据需要调整高度 */
+    max-width: 100%;
+    box-sizing: border-box; /* 确保padding和border包含在宽度内 */
+    /* 降低高度 */
+    padding: 0px 10px;
+    /* line-height:normal; 重置行高，对齐无效 */
+    margin-top: 9px; /*用这个margin-top就可以对齐了*/
+}
+
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 20px; /* 对较小的屏幕使用更小的字体 */
+    }
+    /* .container {
+        height: 99vh; 
+        overflow-y: auto; 
+    } */
+
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    h2 {
+        font-size: 36px; /* 中等屏幕 */
+    }
+}
+

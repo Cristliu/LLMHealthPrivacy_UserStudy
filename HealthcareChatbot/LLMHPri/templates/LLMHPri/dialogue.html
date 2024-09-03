@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>AI大模型医疗健康咨询</title>
+    <link href="/static/img/AIH.ico" rel="icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=2.0"> 
+    <script src="{% static 'js/scripts.js' %}?v=2.0" defer></script>
+</head>
+<body>
+    <main class="container">
+
+    {% if valid_token %}
+
+        <h2 id='h2title'>AI大模型医疗健康咨询</h2>
+        <div class="content">        
+            <div id="infoForm">
+                <label>
+                    <p>欢迎使用AI大模型医疗健康咨询服务。请准备好您想询问的医疗健康问题，如医学常识。</p>
+                    <p><strong>请注意，医疗聊天机器人提供的回复和建议均由称为GPT的AI大模型生成，这些建议需要专业医生的审查才可以得到实施，请谨慎参考。
+                    </strong></p>
+                    <p><strong>如果您具有医学背景，请认真评估AI大模型的回复或建议。</strong></p>
+                    </label>
+                <label>开始咨询之前，请选择是否提供年龄等基本信息以获取个性化建议：</label>
+                <div style="display: inline-block;">
+                    <input type="radio" id="yes" name="provideInfo" value="yes"><label style="margin-right: 50px" for="yes">是</label>
+                    <input type="radio" id="no" name="provideInfo" value="no"><label for="no">否</label>
+                </div>
+
+                <div id="additionalInfo" style="display:none;">
+                    <div>
+                        <label for="age">年龄:</label>
+                        <select id="age" required>
+                            <option value="" disabled selected>请选择</option>
+                            <option value="18-24">18-24</option>
+                            <option value="25-34">25-34</option>
+                            <option value="35-44">35-44</option>
+                            <option value="45-54">45-54</option>
+                            <option value="55-64">55-64</option>
+                            <option value="65+">65以上</option>
+                        </select>
+                    </div>
+                
+                    <div>
+                        <label for="gender">性别:</label>
+                        <select id="gender" required>
+                            <option value="" disabled selected>请选择</option>
+                            <option value="Male">男</option>
+                            <option value="Female">女</option>
+                            <option value="Other">其他</option>
+                        </select>
+                    </div>
+                
+                    <div>
+                        <label for="occupation">职业或身份:</label>
+                        <input type="text" id="occupation" name="occupation" required placeholder="请输入">
+                    </div>
+                </div>                  
+            </div>
+            <label style="margin-left:10px">请点击下方按钮进入咨询页面</label>
+        </div>
+            <div class="button-container">
+                <button onclick="showConsultation('multiple')">进入咨询页面</button>
+            </div>
+        <div class="chat-container" id="chatSession" style="display:none;">
+
+            <div class="messages" id="messages">
+                <div class="message gpt-message">
+                    <img src="{% static 'img/GPTDoc.png' %}" class="avatar">
+                    <div class="text-content">
+                    <p>您好! 我是AI大模型医疗聊天机器人，作为您的健康助理，我可以解答您的医疗健康问题。
+                        所提供的建议仅供参考，请在实际医疗决策中谨慎使用。
+                        当您想结束咨询时，点击下方“结束咨询”进入问卷调查。
+                    记住您的编号是<strong>{{ user_session_id }}，填问卷要用到哦!</strong></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="suggestions">
+                <button class="suggestion-btn" onclick="insertText('如何缓解眼睛疲劳？')">如何缓解眼睛疲劳？</button>
+                <button class="suggestion-btn" onclick="insertText('有哪些按摩方法可以缓解胃痛？')">有哪些按摩方法可以缓解胃痛？</button>
+                <button class="suggestion-btn" onclick="insertText('地塞米松是解热药物吗？')">地塞米松是解热药物吗？</button>
+            </div>
+
+            <script type="text/javascript">
+                var sessionId = "{{ user_session_id }}"; 
+            </script>
+
+            <div class ="input-container">
+                <textarea id="message-input" placeholder="在这里输入您的问题，或者点击上面的常见问题，并通过“发送问题”按钮发起咨询"></textarea>
+                <div class="button-row">
+                    <input type="button" class="styled-button" id="send-button" value="发送问题">
+                    <input type="button" class="end-styled-button" id="end-button" value="结束咨询">
+                </div>
+            </div>
+        </div>
+    {% else %}
+            <h2>请先阅读并同意知情同意书</h2>
+    {% endif %}
+
+    </main>
+</body>
+
+</html>

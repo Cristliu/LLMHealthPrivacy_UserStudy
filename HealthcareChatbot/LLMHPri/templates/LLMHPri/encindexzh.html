@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>AI大模型医疗咨询体验调查</title>
+    <link href="/static/img/AIH.ico" rel="icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=2.0"> 
+
+</head>
+<body>
+    <main class="container">
+    <div class="title-area">
+        <h2>AI大模型医疗咨询体验调查</h2>
+        <div class = "prenote">
+        欢迎参与体验调查，请先仔细阅读基本概念解释和知情同意书。
+
+            <div class = "footnote">
+            <p><strong>基本概念解释：</strong>
+            本调查中，AI大模型（也称为大模型）就像一个虚拟的医生，通过学习海量的医疗知识，能回答我们关于健康问题的任何咨询。</p>
+            </div>
+
+        </div>
+        
+        
+    </div>
+
+        <section>
+            <h3><strong>知情同意书</strong></h3>
+        <div class="content-line">
+
+            <p class="index_p_margin"><strong>调查目的：</strong>
+            本调查旨在了解用户使用AI大模型医疗健康咨询服务的体验，更好地理解用户对该服务的观点，从而设计出更安全和更符合用户期待的服务。</p>
+
+            <p class="index_p_margin"><strong>参与条件：</strong>
+                要参加这项调查，您必须 (1) 年满 18 周岁; (2) 长期居住在中国; (3) 首次参与此调查。</p>
+
+            <p class="index_p_margin"><strong>调查过程：</strong>
+            调查预计用时5-10分钟。
+            您将首先向基于AI大模型的医疗聊天机器人提出一些医疗健康相关问题，并阅读回复。
+            之后，您需要在问卷中回答有关您的体验和观点的问题，并提供一些基本但不涉及个人隐私的信息。
+            </p>
+
+            <p class="index_p_margin"><strong>益处和报酬：</strong>
+            参与本调查可能带来的好处包括增加您对AI大模型技术的了解，解答您的医疗健康问题。
+            完成整个调查后，您将获得7元人民币的酬劳。
+            </p>
+
+            <p class="index_p_margin"><strong>注意和提醒：</strong>
+            （1）您与医疗聊天机器人对话中获取到的建议均由来自OpenAI的大模型生成，这些建议需要经过医生审查才能得以实施，请您谨慎参考。
+            （2）请勿在问卷调查的文本框中输入任何个人信息或敏感信息。
+            </p>
+
+            <p class="index_p_margin"><strong>隐私和风险：</strong>
+            本调查遵循国家相关信息保护法规。
+            （1）参与调查前您还需要同意OpenAI的<a href="https://openai.com/policies/terms-of-use/">使用条款</a>，
+            阅读<a href="https://openai.com/policies/privacy-policy/">隐私策略</a>。
+            （2）除了OpenAI的自动收集，我们不会存储您与医疗机器人的任何对话数据。
+            您在问卷中提供的所有数据仅供本团队研究使用，并将严格保密和安全存储。
+            （3）在调查中，您访问设备的IP地址将被临时收集用于限制重复参与和辨别所在城市。
+            领取报酬时会收集您微信的一个匿名字段openid，但无法识别到您的账号信息或其他个人信息。
+            收集到的IP地址和openid将及时删除，不会用于分析。
+            </p> 
+
+            <p class="index_p_margin"><strong>自愿参与：</strong>
+            参与本调查完全自愿。如果您同意参与，请点击下方的 [同意并进入测试] 按钮。否则，您可以关闭此页面。
+            即使您已开始参与，也可以随时无理由退出。
+
+            <p class="index_p_margin"><strong>联系方式：</strong>
+            如您有任何疑问，请通过REDACTED联系我们的研究团队REDACTED</p>
+        </p>
+
+        </div>
+            
+            <div class="button-container">
+                <form method="post" action="{% url 'LLMHPri:dialogue' %}">
+                    {% csrf_token %}
+                    <button type="submit">同意并进入调查</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

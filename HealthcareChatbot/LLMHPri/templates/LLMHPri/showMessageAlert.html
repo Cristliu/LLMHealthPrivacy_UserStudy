@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI医疗咨询体验与调查</title>
+    {% comment %} <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon-16x16.png"> {% endcomment %}
+    <link href="/static/img/AIH.ico" rel="icon" />
+    {% comment %} <link rel="manifest" href="/static/img/site.webmanifest"> {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        body {
+            background-image: url('/static/img/BG1.png'); /* 背景图片 */
+            {% comment %} background-size: contain; /* 保持比例不变，可能不会覆盖整个页面 */ {% endcomment %}
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* 背景图片固定，不随滚动条滚动 */
+            background-size: cover; /* 背景图片覆盖整个页面 */
+            {% comment %} background-position: top center; /* 背景图片居中并固定在顶部 */
+            background-attachment: fixed; /* 背景图片固定，不随页面滑动 */ {% endcomment %}
+            color: #333; /* 主要文字颜色 */
+            font-family: Arial, sans-serif; /* 字体样式 */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0); /* 不透明背景 */
+            border-radius: 10px; /* 圆角边框 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* 阴影效果 */
+            padding: 20px;
+            max-width: 800px; /* 最大宽度 */
+            margin: 0px auto 0px; /* 调整底部外边距为10px */
+            min-height: calc(100vh - 5px); /* 视口高度减去上下外边距 */
+            justify-content: flex-start; /* 内容分布方式 */
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            word-wrap: break-word; /* 允许单词内换行 */
+            overflow-wrap: break-word; /* 允许在长单词或URL地址内部进行换行 */
+            text-align: center;
+            font-weight: normal; /* 调整标题字体为正常粗细 */
+            margin-bottom: 10px;
+        }
+
+        strong, .highlight {
+            color: rgb(195, 155, 98); /* 设置加粗文字的颜色为金黄色 */
+        }
+
+        .button-container {
+            text-align: center; /* 使容器内的内容居中 */
+        }
+
+        button {
+            background-color: rgb(195, 155, 98); /* 按钮背景颜色 rgb(218, 165, 50); */ 
+            color: white; /* 按钮文本颜色 */
+            border: none; /* 去掉边框 */
+            padding: 10px 20px; /* 按钮内边距 */
+            text-transform: uppercase; /* 文本大写 */
+            cursor: pointer; /* 鼠标样式 */
+            max-width: 400px; /* 限制最大宽度 */
+            width: 100%; /* 宽度适应内容 */
+            display: inline-block; /* 行内块元素，使margin生效 */
+            margin: 0 auto; /* 上下不变，左右自动，实现居中 */
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            button {
+                max-width: 400px; /* 较小屏幕上的最大宽度 */
+            }
+        }
+
+        button:hover {
+            background-color: darkgoldenrod; /* 鼠标悬停时的背景颜色 */
+        }
+
+        .centered-title {
+            text-align: center;
+            {% comment %} color: maroon; {% endcomment %}
+            margin-bottom: 10px;
+        }
+
+        .centered-title-line {
+            text-align: center;
+            {% comment %} border-bottom: 1px dashed maroon; /* 横线 */
+            padding-bottom: 5px; /* 与横线之间的距离 */ {% endcomment %}
+            margin-bottom: 10px;
+        }
+
+        .content {
+            margin-top: 5px; /* 与标题的间距 */
+            padding: 15px 30px; /* 增加左右的内边距以留出更多空间，同时保留上下的内边距 */
+            text-align: justify; /* 使文本两端对齐 */
+        }
+
+        p {
+            margin-top: 5px; /* 减少上间距 */
+            margin-bottom: 5px; /* 减少下间距 */
+        }
+
+
+        .content-line {
+            border: 1px solid #cccccc; /* 浅色边框 */
+            margin-top: 5px; /* 与标题的间距 */
+            padding: 15px 30px; /* 增加左右的内边距以留出更多空间，同时保留上下的内边距 */
+            text-align: justify; /* 使文本两端对齐 */
+            margin-bottom: 20px;
+            {% comment %} 
+            margin-left: 10px; /* 左右边距 */
+            margin-right: 10px;
+            padding: 15px; /* 文本与边框的间距 */ {% endcomment %}
+        }
+    </style>
+
+</head>
+<body>
+    <main class="container">
+    <div class="title-area">
+        <h2>{{ message }}</h2>
+    </div>
+    </main>
+</body>
+</html>

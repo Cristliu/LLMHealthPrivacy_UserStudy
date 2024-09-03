@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>AI-LLM-based Healthcare Consultation Experience Survey</title>
+    {% comment %} <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon-16x16.png"> {% endcomment %}
+    <link href="/static/img/AIH.ico" rel="icon" />
+    {% comment %} <link rel="manifest" href="/static/img/site.webmanifest"> {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=2.0"> 
+    <script src="{% static 'js/scripts2.js' %}?v=2.0" defer></script>
+
+</head>
+<body>
+    <main class="container" id="survey-container">
+        
+    <div id="sessionText" style="text-align:center;">
+        <strong>The number you need to fill in for the first question is: {{ user_session_id }}</strong>
+    </div>
+
+    <script>
+        // 当文档加载完成后执行
+        document.addEventListener("DOMContentLoaded", function() {
+            // 设置定时器
+            setTimeout(function() {
+                // 获取ID为'sessionText'的元素，并将其隐藏
+                document.getElementById('sessionText').style.display = 'none';
+            }, 15000); // 15000毫秒后执行，即15秒
+        });
+    </script>
+
+    {% if valid_token %}
+        <!-- Survey content goes here -->
+        <script type="text/javascript">
+            // 直接从模板上下文中获取会话ID
+            var sessionId = "{{ user_session_id }}";
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                loadScriptBasedOnSessionId_QNSurvey();
+            });
+        </script>
+
+        {% comment %} <iframe src='https://www.wjx.cn/vm/mBTupYX.aspx?width=750&source=iframe&s=t'></iframe> {% endcomment %}
+        {% comment %} <script type='text/javascript' src='https://www.wjx.cn/handler/jqemed.ashx?activity=hQvvEvg&width=750&source=iframe&sm=t&height=2'></script> {% endcomment %}
+
+    {% else %}
+            <h2>Please complete the consultation process first.</h2>
+    {% endif %}
+    
+    </main>
+</body>
+</html>
