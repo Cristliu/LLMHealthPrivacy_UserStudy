@@ -1,6 +1,6 @@
 # Prevalence Overshadows Concerns? Understanding Chinese Users’ Privacy Awareness and Expectations Towards LLM-based Healthcare Consultation
 
-This repository contains the code and redacted datasets for our IEEE S&P 2025 paper: *"Prevalence Overshadows Concerns? Understanding Chinese Users’ Privacy Awareness and Expectations Towards LLM-based Healthcare Consultation"*
+This repository contains the code and redacted datasets for our IEEE S&P 2025 paper: *[Prevalence Overshadows Concerns? Understanding Chinese Users’ Privacy Awareness and Expectations Towards LLM-based Healthcare Consultation](https://www.computer.org/csdl/proceedings-article/sp/2025/223600a092/22K50ou6sKY)*
 
 
 ---
@@ -65,4 +65,4 @@ If you have experience with running Django projects, follow these steps to run t
 ## Citation
 Please consider citing the following paper if you found our work useful.
 
-> Zhihuang Liu, Ling Hu, Tongqing Zhou, Yonghao Tang, Zhiping Cai. Prevalence Overshadows Concerns? Understanding Chinese Users’ Privacy Awareness and Expectations Towards LLM-based Healthcare Consultation, *IEEE Symposium on Security and Privacy (S&P). IEEE, 2025*.
+> Zhihuang Liu, Ling Hu, Tongqing Zhou, Yonghao Tang, Zhiping Cai. Prevalence Overshadows Concerns? Understanding Chinese Users’ Privacy Awareness and Expectations Towards LLM-based Healthcare Consultation, *2025 IEEE Symposium on Security and Privacy (SP)*, IEEE Computer Society, 2024: 92.
