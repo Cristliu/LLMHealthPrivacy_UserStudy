@@ -65,4 +65,4 @@ If you have experience with running Django projects, follow these steps to run t
 ## Citation
 Please consider citing the following paper if you found our work useful.
 
-> Zhihuang Liu, Ling Hu, Tongqing Zhou, Yonghao Tang, Zhiping Cai. Prevalence Overshadows Concerns? Understanding Chinese Users’ Privacy Awareness and Expectations Towards LLM-based Healthcare Consultation, *2025 IEEE Symposium on Security and Privacy (SP)*, IEEE Computer Society, 2024: 92.
+> Zhihuang Liu, Ling Hu, Tongqing Zhou, Yonghao Tang, Zhiping Cai. Prevalence Overshadows Concerns? Understanding Chinese Users’ Privacy Awareness and Expectations Towards LLM-based Healthcare Consultation, in *2025 IEEE Symposium on Security and Privacy (SP)*, San Francisco, CA, USA, 2025, pp. 2493-2511, doi: 10.1109/SP61157.2025.00092.
