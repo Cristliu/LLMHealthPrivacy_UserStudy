@@ -25,7 +25,7 @@ The scripts provided in these notebooks have been processed to handle any sensit
 
 ## LLM-based Healthcare Chatbot
 
-The deployed system can be accessed at:
+The deployed system can be accessed at [**(Note: Links will expire upon server lease termination)**]:
 - [Chinese version](http://healthllm.top/LLMHPri/encindexzh/)
 - [English version](http://healthllm.top/LLMHPri/encindexen/)
 
